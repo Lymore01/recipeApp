@@ -1,0 +1,176 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YumQuest | recepie</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <%= javascript_include_tag 'index', async: true%>
+    <%= preload_link_tag 'index.js', as: 'script' %>
+    <%= stylesheet_link_tag 'recipe_app' %>
+    <%= preload_link_tag 'application.css', as: 'style' %>
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js' %>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h3>Yum</h3>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          style="fill: rgba(0, 0, 0, 1); transform: msFilter"
+        >
+          <path
+            d="M3 2h2v20H3zm16 0H6v20h13c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-1 10H9v-2h9v2zm0-4H9V6h9v2z"
+          ></path>
+        </svg>
+      </div>
+      <div class="search-bar">
+        <div class="search-button" onclick="handleSearch()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            style="fill: rgba(0, 0, 0, 1); transform: msFilter"
+          >
+            <path
+              d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"
+            ></path>
+          </svg>
+        </div>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="what do you want to cook today"
+        />
+      </div>
+      <!--  <div class="account">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQf9kaTSMlxlrA4PinbyaRSFH9LED1RBnEbU2kz2FTJA&s"
+          class="account-image"
+        />
+      </div> -->
+      <a style="text-decoration: none;" href="/new_recipe">
+        <div class="post-dish">
+          <p>Add a dish</p>
+        </div>
+      </a>
+      <!-- <div class="trending">
+        <p>Trending</p>
+      </div>
+      <div class="log-in">
+        <p>Login</p>
+      </div> -->
+    </nav>
+    <main>
+      <!--  <div class="search-div">
+        <p>Search results for:</p>
+        <span class="search-meal">Spaghetti alla Carbonara</span>
+      </div> -->
+      <div class="recipe-container">
+        <h1 class="recipe-title">Spaghetti alla Carbonara</h1>
+        <div class="recipe-meta">
+          <span class="meta-item"
+            >Category:<span class="category">Pasta</span></span
+          >
+          <span class="meta-item">Area:<span class="area">Italian</span></span>
+        </div>
+        <div class="recipe-content">
+          <div class="recipe-section">
+            <h2 class="section-title">Ingredients</h2>
+            <ul class="ingredient-list">
+              <li>Pasta</li>
+              <li>Eggs</li>
+              <li>Guanciale or Pancetta</li>
+              <li>Parmesan cheese</li>
+              <li>Black pepper</li>
+              <li>Salt</li>
+            </ul>
+          </div>
+          <div class="recipe-section">
+            <h2 class="section-title">Instructions</h2>
+            <ol class="instruction-list">
+              <li>Boil water and cook pasta until al dente.</li>
+              <li>
+                In a separate pan, cook guanciale or pancetta until crispy.
+              </li>
+              <li>
+                In a bowl, whisk eggs and mix with grated parmesan cheese.
+              </li>
+              <li>
+                Combine cooked pasta with guanciale and quickly mix in egg
+                mixture.
+              </li>
+              <li>Season with salt and plenty of black pepper.</li>
+              <li>Serve immediately.</li>
+            </ol>
+          </div>
+          <div class="recipe-section">
+            <h2 class="section-title">Image</h2>
+            <img
+              src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg"
+              alt="Spaghetti Carbonara"
+              class="recipe-image"
+            />
+          </div>
+          <div class="recipe-section">
+            <h2 class="section-title">Video</h2>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/_T6jkRvhlkk"
+              frameborder="0"
+              allowfullscreen
+              class="meal-video"
+            ></iframe>
+          </div>
+          <div class="recipe-section" style="text-align: center">
+            <h2 class="section-title">Source</h2>
+            <a
+              href="https://www.bbcgoodfood.com/recipes/ultimate-spaghetti-carbonara-recipe"
+              class="meal-src"
+            >
+              https://www.bbcgoodfood.com/recipes/ultimate-spaghetti-carbonara-recipe</a
+            >
+          </div>
+          <div
+            class="recipe-section"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              flex-direction: column;
+            "
+          >
+            <h2 class="section-title">Share With Friends</h2>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              style="
+                fill: orangered;
+                transform: msFilter;
+                height: 60px;
+                width: 60px;
+              "
+            >
+              <path
+                d="M3 12c0 1.654 1.346 3 3 3 .794 0 1.512-.315 2.049-.82l5.991 3.424c-.018.13-.04.26-.04.396 0 1.654 1.346 3 3 3s3-1.346 3-3-1.346-3-3-3c-.794 0-1.512.315-2.049.82L8.96 12.397c.018-.131.04-.261.04-.397s-.022-.266-.04-.397l5.991-3.423c.537.505 1.255.82 2.049.82 1.654 0 3-1.346 3-3s-1.346-3-3-3-3 1.346-3 3c0 .136.022.266.04.397L8.049 9.82A2.982 2.982 0 0 0 6 9c-1.654 0-3 1.346-3 3z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+ 
+
+</html>

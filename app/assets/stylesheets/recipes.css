@@ -1,0 +1,43 @@
+body{
+  padding: 8;
+  background-color: whitesmoke;
+  height: screen;
+  margin-top: 50px;  
+
+}
+.recipe-form {
+    max-width: 500px;
+    margin: 30px auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-control-file {
+    width: 100%;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
