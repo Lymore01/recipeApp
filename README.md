@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![127 0 0 1_3000_recipe](https://github.com/Lymore01/recipeApp/assets/130097627/0e226f52-e9b6-4df0-94e2-ef8d15009f47)
+Fun fact : Did you know that Ugali is not only a staple food in Kenya but also in several other African countries, including Tanzania, Uganda, Rwanda, Burundi, and South Sudan? It's a versatile dish made from maize flour (cornmeal) and water, and it's enjoyed in various forms and with different accompaniments across these regions.🧐❤
